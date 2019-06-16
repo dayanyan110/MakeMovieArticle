@@ -1,0 +1,35 @@
+<h1>映画を検索</h1>
+<form action='/search/index' method='post' name='movie_search'>
+<input type='text' name='search_word'>
+<button type="button" id="movie_search">検索</button>
+</form>
+
+
+
+<div class="movie-info-box">
+<div class="movie-info-img">
+<img src="https://image.tmdb.org/t/p/original/a8BknzvFVK5EZ83rKg1a83iwaj0.jpg" alt="ワンパンマン（2015）" width="300px" />
+</div>
+<h2>ワンパンマン（2015）のあらすじ</h2>
+
+物語開始から三年前、就職活動に行き詰る青年・サイタマは、ある日街で暴れていた怪人から顎の割れた少年を救う。その際、「ヒーローになりたい」という幼き日の夢を思い出し、就活をやめてヒーローになることを決意。頭髪全てを失うほど懸命なトレーニングを3年間行った結果、どんな敵でも一撃で倒せる最強の力を手に入れる。
+
+しかし、いつも一撃で決着が付いてしまうことから、次第に戦いに対する緊張感などを喪失し、ヒーローになった現在でも無気力な日々を送っていた。
+</div>
+
+<script>
+$('#movie_search').on('click', function(e) {
+        $.ajax({
+            url:'https://api.themoviedb.org/3/search/movie?api_key=292d21bb6afc6a94e796c22ba6ed013c&language=ja-JA&query=%E3%82%B3%E3%83%8A%E3%83%B3&page=2&include_adult=false',
+            type:'GET',
+        })
+        .done( (data) => {
+            console.log(data);
+            console.log(data.results);
+        })
+        .fail( (data) => {
+                    $('.result').html(data);
+                    console.log(data);
+        })
+});
+</script>

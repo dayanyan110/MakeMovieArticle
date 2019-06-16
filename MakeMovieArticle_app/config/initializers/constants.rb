@@ -1,0 +1,2 @@
+#定数定義
+MOVIE_API_KEY = "292d21bb6afc6a94e796c22ba6ed013c";

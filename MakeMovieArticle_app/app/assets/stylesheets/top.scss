@@ -1,0 +1,13 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.movie-info-img {
+    margin: 0 auto;
+    width: 75px;
+    }
+@media screen and (min-width: 641px) {
+    .movie-info-img {
+    margin: 0 auto;
+    width: 33px;
+    }
+}
